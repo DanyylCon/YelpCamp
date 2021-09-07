@@ -28,7 +28,8 @@ const seedDB = async () => {
             location: `${cities[randomOf1000].city}, ${cities[randomOf1000].state}`,
             image: 'https://source.unsplash.com/collection/483251',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quaerat maiores, quibusdam voluptatem aspernatur cupiditate iure pariatur natus fugit repellendus quidem, atque tempore magnam possimus quas nihil autem, ut sit.',
-            price: randPrice
+            price: randPrice,
+            author: '6136bfb1da8dd94b4c978330'
         });
         await camp.save();
     }
@@ -37,4 +38,3 @@ const seedDB = async () => {
 seedDB().then( () => {
     db.close();
 });
-
