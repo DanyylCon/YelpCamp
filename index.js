@@ -99,7 +99,7 @@ app.use(
     })
 );
 
-const secret = process.env.SECRET;
+const secret = process.env.SECRET || 'thisisnotagoodsecret';
 
 const store = MongoDBStore.create({
     mongoUrl: dbUrl,
@@ -160,6 +160,8 @@ app.use( (err, req, res, next) => {
     res.status(statusCode).render('error', {err});
 });
 
-app.listen('3000', () => {
-    console.log('App is listeninig yo');
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`Serving on port ${port}`);
 });
